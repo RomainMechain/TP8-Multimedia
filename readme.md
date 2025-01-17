@@ -1,6 +1,6 @@
 # TP8-Multimedia 
 
-## Maillage 
+## Maillage 
 
 Pour afficher ce cube, il suffit de définir les coorddonées de toute les points de chaque face dans le verticesCarreDoublons : 
 
@@ -64,7 +64,7 @@ Puis ensuite de définir les indices des triangles de chaque face dans indices :
   };
 ```
 
-## Coordonnées de textures
+## Coordonnées de textures
 
 Il suffit de compléter les coordonnées de textures dans le tableau texCoords : 
 
@@ -133,7 +133,7 @@ Pour changer de textures, il suffit de changer le lien vers l'image :
 cv::Mat img = cv::imread(  MY_RES_PATH+ (std::string )"/res/images/mur.png", cv::IMREAD_UNCHANGED );
 ```
 
-## Texture procédurale
+## Texture procédurale
 
 Pour afficher une texture procédurale, il faut commencer par ajouter à notre code la commande qui nous ait fournie, de l'appeler dans la fonction initTextures, et remplacer la glTexImage2D : 
 
