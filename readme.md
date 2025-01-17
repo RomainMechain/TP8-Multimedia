@@ -117,4 +117,10 @@ Cette étape est très simple, il suffit de rajouter la couleur en plus de la te
 ```cpp
 frag_color = texture( tex, texcoord ) + vec4(colors, 0.5 );
 ```
+## Coordonnées de textures multipliées pas les couleurs
 
+Nous avons pour cela qu'a remplacer l'addition par une multiplication : 
+
+```cpp
+frag_color = texture( tex, texcoord ) * vec4(colors, 0.5 );
+```
