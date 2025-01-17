@@ -384,7 +384,7 @@ void initTextures()
 {
   
     
-  cv::Mat img = cv::imread(  MY_RES_PATH+ (std::string )"/res/images/logoIUT.png", cv::IMREAD_UNCHANGED );
+  cv::Mat img = cv::imread(  MY_RES_PATH+ (std::string )"/res/images/mur.png", cv::IMREAD_UNCHANGED );
  
   unsigned int texture[1];
 

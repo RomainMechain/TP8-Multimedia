@@ -124,3 +124,11 @@ Nous avons pour cela qu'a remplacer l'addition par une multiplication :
 ```cpp
 frag_color = texture( tex, texcoord ) * vec4(colors, 0.5 );
 ```
+
+## Changer de textures
+
+Pour changer de textures, il suffit de changer le lien vers l'image : 
+
+```cpp
+cv::Mat img = cv::imread(  MY_RES_PATH+ (std::string )"/res/images/mur.png", cv::IMREAD_UNCHANGED );
+```
