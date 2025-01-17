@@ -42,6 +42,18 @@ unsigned int size;
 cube uncube(1.01);
 
 
+GLubyte checkImage0[256][256][4];
+void makeCheckImage() {
+  GLubyte c;
+  for (int i = 0; i < 256; i++) {
+    for (int j = 0; j < 256; j++) {
+      c = ((((i&0x20)==0)^((j&0x20))==0))*255;
+      checkImage0[i][j][0] = checkImage0[i][j][1] = checkImage0[i][j][2] = c;
+      checkImage0[i][j][3] = 255;
+    }
+  }
+}
+
 void display()
 {
   glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
@@ -383,6 +395,7 @@ void initShaders()
 void initTextures()
 {
   
+  makeCheckImage();
     
   cv::Mat img = cv::imread(  MY_RES_PATH+ (std::string )"/res/images/mur.png", cv::IMREAD_UNCHANGED );
  
@@ -395,7 +408,8 @@ void initTextures()
   glUniform1i(tex, 0);
   glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST );
   glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST );
-  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.rows, img.cols, 0, GL_BGRA,GL_UNSIGNED_BYTE,img.data);
+  //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.rows, img.cols, 0, GL_BGRA,GL_UNSIGNED_BYTE,img.data);
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 256, 256, 0, GL_RGBA, GL_UNSIGNED_BYTE, checkImage0);
         
    
 }

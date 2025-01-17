@@ -132,3 +132,12 @@ Pour changer de textures, il suffit de changer le lien vers l'image :
 ```cpp
 cv::Mat img = cv::imread(  MY_RES_PATH+ (std::string )"/res/images/mur.png", cv::IMREAD_UNCHANGED );
 ```
+
+## Texture procédurale
+
+Pour afficher une texture procédurale, il faut commencer par ajouter à notre code la commande qui nous ait fournie, de l'appeler dans la fonction initTextures, et remplacer la glTexImage2D : 
+
+```cpp
+makeCheckImage();
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 256, 256, 0, GL_RGBA, GL_UNSIGNED_BYTE, checkImage0);
+```
