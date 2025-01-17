@@ -66,7 +66,7 @@ void display()
     glDrawElements( GL_TRIANGLES,size, GL_UNSIGNED_SHORT, 0 );
     
     
-    uncube.trace_cube(proj*  view);
+    //uncube.trace_cube(proj*  view);
   
   glutSwapBuffers();
 }
@@ -110,20 +110,42 @@ void initVAOs()
   };
 
     
+  std::vector<float> verticesCarreDoublons = {
+    // avant
+    -0.5f, -0.5f,  0.5f,
+    0.5f, -0.5f,  0.5f,
+    -0.5f,  0.5f,  0.5f,
+    0.5f,  0.5f,  0.5f, 
 
-  std::vector< float > verticesCarreDoublons = {
-      -0.5,-0.5,0.5,  // pointinital: 0   nouveau point: 0
-      0.5,-0.5,0.5,  // pointinital: 2   nouveau point: 1
-      -0.5,0.5,0.5,  // pointinital: 1   nouveau point: 2
-      0.5,0.5,0.5,  // pointinital: 3   nouveau point: 3
-      0.5,-0.5,-0.5,  // pointinital: 6   nouveau point: 4
-      -0.5,-0.5,-0.5,  // pointinital: 4   nouveau point: 5
-      0.5,0.5,-0.5,  // pointinital: 7   nouveau point: 6
-      -0.5,0.5,-0.5,  // pointinital: 5   nouveau point: 7
-      0.5,-0.5,0.5,  // pointinital: 2   nouveau point: 8
-      0.5,-0.5,-0.5,  // pointinital: 6   nouveau point: 9
-      0.5,0.5,0.5,  // pointinital: 3   nouveau point: 10
-      
+    // arrière
+    -0.5f, -0.5f, -0.5f, 
+    0.5f, -0.5f, -0.5f,  
+    -0.5f,  0.5f, -0.5f,  
+    0.5f,  0.5f, -0.5f, 
+
+    // gauche
+    -0.5f, -0.5f, -0.5f,
+    -0.5f, -0.5f,  0.5f, 
+    -0.5f,  0.5f, -0.5f, 
+    -0.5f,  0.5f,  0.5f, 
+
+    // droite
+    0.5f, -0.5f, -0.5f,  
+    0.5f, -0.5f,  0.5f, 
+    0.5f,  0.5f, -0.5f, 
+    0.5f,  0.5f,  0.5f, 
+
+    // dessous
+    -0.5f, -0.5f, -0.5f, 
+    0.5f, -0.5f, -0.5f, 
+    -0.5f, -0.5f,  0.5f,  
+    0.5f, -0.5f,  0.5f, 
+
+    // dessus
+    -0.5f,  0.5f, -0.5f, 
+    0.5f,  0.5f, -0.5f, 
+    -0.5f,  0.5f,  0.5f,
+    0.5f,  0.5f,  0.5f,
   };
     
     
@@ -187,7 +209,21 @@ void initVAOs()
      };
 
   
-    std::vector< unsigned short > indices = {0,1,2,1,2,3,4,5,6,5,6,7,8,9,10,};
+    // Liste des indices des sommets de triangle pour chaque face. 
+    std::vector<unsigned short> indices = {
+      //avant
+      0, 1, 2, 1, 2, 3,
+      //arrière
+      4, 5, 6, 5, 6, 7,
+      //gauche
+      8, 9, 10, 9, 10, 11,
+      //droite
+      12, 13, 14, 13, 14, 15,
+      //dessous
+      16, 17, 18, 17, 18, 19,
+      //dessus
+      20, 21, 22, 21, 22, 23
+  };
     size=indices.size();
 
      
