@@ -64,6 +64,8 @@ Puis ensuite de définir les indices des triangles de chaque face dans indices :
   };
 ```
 
+![alt text](screen/TP8-1.png)
+
 ## Coordonnées de textures
 
 Il suffit de compléter les coordonnées de textures dans le tableau texCoords : 
@@ -110,6 +112,8 @@ std::vector< float > texcoords = {
 
 Puis de mettre en commentaire la ligne suivante dans le shader : `frag_color =  vec4(colors, 0.5 );`
 
+![alt text](screen/TP8-2.png)
+
 ## Coordonnées de textures additionnées aux couleurs
 
 Cette étape est très simple, il suffit de rajouter la couleur en plus de la texture dans le shader : 
@@ -117,6 +121,7 @@ Cette étape est très simple, il suffit de rajouter la couleur en plus de la te
 ```cpp
 frag_color = texture( tex, texcoord ) + vec4(colors, 0.5 );
 ```
+![alt text](screen/TP8-3.png)
 ## Coordonnées de textures multipliées pas les couleurs
 
 Nous avons pour cela qu'a remplacer l'addition par une multiplication : 
@@ -124,6 +129,7 @@ Nous avons pour cela qu'a remplacer l'addition par une multiplication :
 ```cpp
 frag_color = texture( tex, texcoord ) * vec4(colors, 0.5 );
 ```
+![alt text](screen/TP8-4.png)
 
 ## Changer de textures
 
@@ -132,6 +138,7 @@ Pour changer de textures, il suffit de changer le lien vers l'image :
 ```cpp
 cv::Mat img = cv::imread(  MY_RES_PATH+ (std::string )"/res/images/mur.png", cv::IMREAD_UNCHANGED );
 ```
+![alt text](screen/TP8-5.png)
 
 ## Texture procédurale
 
@@ -141,3 +148,4 @@ Pour afficher une texture procédurale, il faut commencer par ajouter à notre c
 makeCheckImage();
 glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 256, 256, 0, GL_RGBA, GL_UNSIGNED_BYTE, checkImage0);
 ```
+![alt text](screen/TP8-7.png)
