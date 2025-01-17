@@ -109,3 +109,12 @@ std::vector< float > texcoords = {
 ```
 
 Puis de mettre en commentaire la ligne suivante dans le shader : `frag_color =  vec4(colors, 0.5 );`
+
+## Coordonnées de textures additionnées aux couleurs
+
+Cette étape est très simple, il suffit de rajouter la couleur en plus de la texture dans le shader : 
+
+```cpp
+frag_color = texture( tex, texcoord ) + vec4(colors, 0.5 );
+```
+
