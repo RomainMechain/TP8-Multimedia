@@ -65,3 +65,47 @@ Puis ensuite de définir les indices des triangles de chaque face dans indices :
 ```
 
 ## Coordonnées de textures
+
+Il suffit de compléter les coordonnées de textures dans le tableau texCoords : 
+
+```cpp
+std::vector< float > texcoords = {
+      //avant
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+      0.0f, 0.0f,
+      1.0f, 0.0f,
+
+      //arrière ok
+      0.0f, 0.0f,
+      1.0f, 0.0f,
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+
+      //gauche ok
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+      0.0f, 0.0f,
+      1.0f, 0.0f,
+
+      //droite ok
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+      0.0f, 0.0f,  
+      1.0f, 0.0f, 
+
+      //dessous
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+      0.0f, 0.0f,
+      1.0f, 0.0f,
+
+      //dessus
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+      0.0f, 0.0f,
+      1.0f, 0.0f,
+     };
+```
+
+Puis de mettre en commentaire la ligne suivante dans le shader : `frag_color =  vec4(colors, 0.5 );`

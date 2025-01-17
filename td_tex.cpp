@@ -187,25 +187,42 @@ void initVAOs()
 
      };
     
-  
-    
     std::vector< float > texcoords = {
-        0.0f, 0.f,
-        0.0f, 1.f,
-        1.0f, 0.0f,
-        1.f, 1.f,
-        
-        0.0f, 0.f,
-        0.0f, 1.f,
-        1.0f, 0.0f,
-        1.f, 1.f,
-        
-        0.0f, 0.f,
-        0.0f, 1.f,
-        1.0f, 0.0f,
-        1.f, 1.f,
-        
-   // ajouter les coordonnées de texture pour les 3 faces manquantes
+      //avant
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+      0.0f, 0.0f,
+      1.0f, 0.0f,
+
+      //arrière ok
+      0.0f, 0.0f,
+      1.0f, 0.0f,
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+
+      //gauche ok
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+      0.0f, 0.0f,
+      1.0f, 0.0f,
+
+      //droite ok
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+      0.0f, 0.0f,  
+      1.0f, 0.0f, 
+
+      //dessous
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+      0.0f, 0.0f,
+      1.0f, 0.0f,
+
+      //dessus
+      0.0f, 1.0f,
+      1.0f, 1.0f,
+      0.0f, 0.0f,
+      1.0f, 0.0f,
      };
 
   
